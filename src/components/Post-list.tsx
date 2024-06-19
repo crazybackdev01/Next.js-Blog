@@ -9,7 +9,11 @@ export default async function PostList() {
     <ul>
       {posts.map((post) => (
         <li key={post.id} className="mb-3">
-          <Link href={`/posts/${post.id}`}>{post.title}</Link>
+          {post.title !== "sex" ? (
+            <Link href={`/posts/${post.id}`}>{post.title}</Link>
+          ) : (
+            <></>
+          )}
         </li>
       ))}
     </ul>
